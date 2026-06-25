@@ -248,6 +248,10 @@ a {
   background: var(--bg);
 }
 
+#about {
+  min-height: auto;
+}
+
 .page-section.alt {
   background: #15171d;
 }
@@ -286,7 +290,7 @@ a {
 
 .stats-grid {
   display: grid;
-  grid-template-columns: repeat(3, minmax(0, 1fr));
+  grid-template-columns: repeat(4, minmax(0, 1fr));
   gap: 24px;
   margin-top: 80px;
 }
@@ -305,10 +309,12 @@ a {
 
 .stat-card strong {
   display: block;
+  max-width: 100%;
   color: var(--text);
   font-size: 48px;
   line-height: 1;
   font-weight: 950;
+  white-space: nowrap;
 }
 
 .stat-card strong.stat-value-wide {
@@ -321,6 +327,8 @@ a {
 
 .stat-card span {
   color: #aab5c8;
+  overflow-wrap: break-word;
+  text-wrap: balance;
 }
 
 .showcase-video {
@@ -332,6 +340,13 @@ a {
   margin: -12px auto 30px;
   color: var(--muted);
   font-size: 16px;
+}
+
+.video-seo-line {
+  margin: -28px auto 24px;
+  color: #a8b3c4;
+  font-size: 14px;
+  font-weight: 700;
 }
 
 .video-frame {
@@ -1131,11 +1146,18 @@ a {
   .stats-grid,
   .infra-grid,
   .analytics-grid,
-  .projects-grid,
   .services-grid,
   .built-grid,
   .contact-grid {
     grid-template-columns: 1fr;
+  }
+
+  .projects-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .stats-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
   }
 
   .wide-card {
@@ -1251,6 +1273,10 @@ a {
 
   .stat-card {
     min-height: 124px;
+  }
+
+  .stats-grid {
+    grid-template-columns: 1fr;
   }
 
   .stat-card strong {
@@ -1374,5 +1400,58 @@ a {
   .service-card,
   .built-card {
     padding: 20px;
+  }
+}
+
+@media (max-width: 320px) {
+  .container,
+  .hero-inner {
+    width: min(100% - 20px, 1060px);
+  }
+
+  .nav {
+    padding-inline: 12px;
+  }
+
+  .brand {
+    font-size: 24px;
+  }
+
+  .menu-button {
+    width: 40px;
+    height: 40px;
+  }
+
+  .section {
+    padding-block: 82px 52px;
+  }
+
+  .hero h1 {
+    font-size: 28px;
+  }
+
+  .section-title {
+    font-size: 28px;
+  }
+
+  .stat-card {
+    padding: 20px 14px;
+  }
+
+  .stat-card strong {
+    font-size: 38px;
+  }
+
+  .project-content,
+  .contact-form,
+  .contact-info,
+  .lab-box,
+  .service-card,
+  .built-card {
+    padding: 18px;
+  }
+
+  .chips span {
+    font-size: 11px;
   }
 }
